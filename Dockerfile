@@ -1,23 +1,28 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
-ENV VERSION=1.3
-ENV SOURCE_DIR=spc-web-gateway-$VERSION
-ENV INSTALL_DIR=/opt/spc-web-gateway
-ENV TEMP_DIR=/tmp/spc-web-gateway-install
+ARG VERSION=1.3
+ARG SOURCE_DIR=spc-web-gateway-$VERSION
+ARG TEMP_DIR=/tmp/spc-web-gateway-install
+ARG UID=1337
+ARG GID=1337
+
+ENV SPC_GW_DIR=/opt/spc-web-gateway
 ENV SPC_GW_USER=gateway
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y openssl
+EXPOSE 8088/tcp
+EXPOSE 16000/tcp
 
-RUN useradd $SPC_GW_USER
+RUN groupadd -g $GID $SPC_GW_USER
+RUN useradd -r -u $UID -g $GID $SPC_GW_USER
+RUN apt-get update && apt-get upgrade -y && apt-get install -y openssl libssl-dev
 
 WORKDIR $TEMP_DIR
-COPY $SOURCE_DIR $TEMP_DIR
-COPY install-spc-web-gateway.sh $TEMP_DIR
-RUN sh install-spc-web-gateway.sh
-
-WORKDIR $INSTALL_DIR
+COPY $SOURCE_DIR $TEMP_DIR/
+COPY install-spc-web-gateway.sh $TEMP_DIR/
+RUN sh $TEMP_DIR/install-spc-web-gateway.sh
 RUN rm -fr $TEMP_DIR
 
-COPY entrypoint.sh $INSTALL_DIR
+WORKDIR $SPC_GW_DIR
+COPY entrypoint.sh $SPC_GW_DIR/
 RUN chmod a+x entrypoint.sh
-ENTRYPOINT $INSTALL_DIR/entrypoint.sh
+ENTRYPOINT sh $SPC_GW_DIR/entrypoint.sh
