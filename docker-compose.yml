@@ -1,0 +1,12 @@
+version: '2'
+services:
+  gateway:
+    image: spc-web-gateway
+    ports:
+      - "8088:8088"
+      - "16000:16000"
+    volumes:
+      - /etc/spc-web-gateway/auth:/opt/spc-web-gateway/auth:z
+      - /etc/spc-web-gateway/config.xml:/opt/spc-web-gateway/config.xml:ro
+    restart: unless-stopped
+    network_mode: bridge
