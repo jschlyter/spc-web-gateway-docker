@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 ARG VERSION=1.3
 ARG SOURCE_DIR=spc-web-gateway-$VERSION
