@@ -2,6 +2,7 @@ version: '2'
 services:
   gateway:
     image: spc-web-gateway
+    tty: true
     ports:
       - "8088:8088"
       - "16000:16000"
