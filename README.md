@@ -14,6 +14,7 @@ Container is to be run as host.
 ## Configure authentication keys
 
 Before deployment one need to install configuration files as well as set passwords and authentication keys: 
+
     docker run -it --rm \
         --entrypoint /bin/bash \
         -v /etc/spc-web-gateway/auth:/opt/spc-web-gateway/auth \
