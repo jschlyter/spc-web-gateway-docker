@@ -21,4 +21,5 @@ Before deployment one need to install configuration files as well as set passwor
         spc-web-gateway
     ./spc-web-gateway -A
     exit
+
 These above steps are very important to make the container run properly (especially saving the config.xml and auth folder externally). 
