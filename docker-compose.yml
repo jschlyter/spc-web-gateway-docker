@@ -10,4 +10,4 @@ services:
       - /etc/spc-web-gateway/auth:/opt/spc-web-gateway/auth:z
       - /etc/spc-web-gateway/config.xml:/opt/spc-web-gateway/config.xml:ro
     restart: unless-stopped
-    network_mode: bridge
+    network_mode: host
