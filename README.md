@@ -23,4 +23,4 @@ Before deployment one need to install configuration files as well as set passwor
     ./spc-web-gateway -A
     exit
 
-These above steps are very important to make the container run properly (especially saving the config.xml and auth folder externally). 
+These above steps are very important to make the container run properly (especially saving the config.xml and auth folder externally). Change the left side path (e.g. /etc/spc-web-gateway/auth) to your own folder structure, the right side (e.g. /opt/spc-web-gateway/auth) is the containers path and shouldn't be changed.
