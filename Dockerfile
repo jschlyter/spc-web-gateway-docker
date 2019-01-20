@@ -25,4 +25,7 @@ RUN rm -fr $TEMP_DIR
 WORKDIR $SPC_GW_DIR
 COPY entrypoint.sh $SPC_GW_DIR/
 RUN chmod a+x entrypoint.sh
+COPY bootstrap.sh $SPC_GW_DIR/
+RUN chmod a+x bootstrap.sh
+
 ENTRYPOINT sh $SPC_GW_DIR/entrypoint.sh
