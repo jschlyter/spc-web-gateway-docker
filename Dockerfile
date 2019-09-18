@@ -1,6 +1,6 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
-ARG VERSION=1.3
+ARG VERSION=1.4
 ARG SOURCE_DIR=spc-web-gateway-$VERSION
 ARG TEMP_DIR=/tmp/spc-web-gateway-install
 ARG UID=1337
