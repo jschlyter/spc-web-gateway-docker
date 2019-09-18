@@ -14,7 +14,7 @@ EXPOSE 16000/tcp
 
 RUN groupadd -g $GID $SPC_GW_USER
 RUN useradd -r -u $UID -g $GID $SPC_GW_USER
-RUN apt-get update && apt-get upgrade -y && apt-get install -y openssl libssl-dev
+RUN apt-get update && apt-get upgrade -y && apt-get install -y openssl
 
 WORKDIR $TEMP_DIR
 COPY $SOURCE_DIR $TEMP_DIR/
