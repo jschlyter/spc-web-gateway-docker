@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM docker.io/ubuntu:18.04
 
 ARG VERSION=1.4
 ARG SOURCE_DIR=spc-web-gateway-$VERSION
