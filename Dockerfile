@@ -1,6 +1,6 @@
 FROM docker.io/ubuntu:20.04
 
-ARG VERSION=1.4
+ARG VERSION=0.0
 ARG SOURCE_DIR=spc-web-gateway-$VERSION
 ARG TEMP_DIR=/tmp/spc-web-gateway-install
 ARG UID=1337
