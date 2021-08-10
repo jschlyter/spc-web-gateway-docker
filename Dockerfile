@@ -1,4 +1,4 @@
-FROM docker.io/ubuntu:18.04
+FROM docker.io/ubuntu:20.04
 
 ARG VERSION=1.4
 ARG SOURCE_DIR=spc-web-gateway-$VERSION
@@ -14,7 +14,7 @@ EXPOSE 16000/tcp
 
 RUN groupadd -g $GID $SPC_GW_USER
 RUN useradd -r -u $UID -g $GID $SPC_GW_USER
-RUN apt-get update && apt-get upgrade -y && apt-get install -y openssl
+RUN apt-get update && apt-get upgrade -y && apt-get install -y openssl libssl1.1
 
 WORKDIR $TEMP_DIR
 COPY $SOURCE_DIR $TEMP_DIR/
