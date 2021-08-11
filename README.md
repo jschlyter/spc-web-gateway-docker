@@ -2,6 +2,10 @@
 
 This repository contains Docker build files for SPC Web Gateway from [Lundix](http://www.lundix.se/).
 
+## Prerequisites
+
+Unpack the SPC Web Gateway distribution tar-ball into this directory. The result should be something like `spc-web-gateway-1.5`. If you have a later version, the `Makefile` must be adjusted accordingly.
+
 ## Building
 
 To build the container, use:
