@@ -1,6 +1,6 @@
 VERSION=	1.5
 SOURCE_DIR=	spc-web-gateway-$(VERSION)
-CONFIG_DIR=	./etc
+CONFIG_DIR=	$(shell pwd)/etc
 AUTH_FILES=	edp_key passwd_get passwd_put passwd_ws license
 IMAGE_NAME=	spc-web-gateway
 
